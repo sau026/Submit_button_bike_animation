@@ -1,46 +1,30 @@
 <!DOCTYPE html>
+
 <head>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Mulish:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Mulish:wght@200&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
 
-<div class="main__box">
-<button class="shadow_button" onclick="submit()">
-    <span id="submit_text">Submit</span>
-    <img id="bike" class="bike" src="motorcycle.png" alt="bike"/>
-</button>
+    <div class="main-box">
+        <!-- <div class="balls" id="green"></div> -->
+        <img id="green" class="balls" src="box.png" alt="" />
+        <img id="cart" class="cart" src="trolley.png" alt="" />
+        <button id="button" class="shadow_button" onclick="submit()">
+            <span id="submit_text">Add to cart</span>
+        </button>
+    </div>
+    <script>
 
-<button class="shadow_button_failed" onclick="submit_failed()">
-    <span id="submit_text_failed">Submit</span>
-    <img id="bike_failed" class="bike_failed" src="motorcycle.png" alt="bike"/>
-</button>
-</div>
-<script>
-
-    function submit(){
-        document.getElementById('bike').classList.add('bike__move');
-        setTimeout(function(){
-            document.getElementById('submit_text').classList.add('d__none');
-            document.getElementById('bike').classList.add('d__none');
-            document.getElementById('submit_text').classList.remove('d__none');
-            document.getElementById('submit_text').innerHTML = 'Sucess';
-            document.getElementById('submit_text').style.color = 'green';
-        }, 2000);
-    }
-
-        function submit_failed(){
-        document.getElementById('bike_failed').classList.add('bike__move__failed');
-        setTimeout(function(){
-            document.getElementById('submit_text_failed').classList.add('d__none');
-            document.getElementById('bike_failed').classList.add('d__none');
-            document.getElementById('submit_text_failed').classList.remove('d__none');
-            document.getElementById('submit_text_failed').innerHTML = 'Failed';
-            document.getElementById('submit_text_failed').style.color = 'red';
-        }, 2000);
-
-    }
-</script>
+        function submit() {
+            document.getElementById('button').classList.add('d__none');
+            document.getElementById('green').classList.add('d__block');
+            document.getElementById('cart').classList.add('d__block');
+        }
+    </script>
 </body>
+
 </html>

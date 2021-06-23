@@ -1,12 +1,59 @@
-*{
-    font-family: 'Lato', sans-serif;
-}
-
 body{
-    background: #efefef;
+  background: #efefef;
+}
+.main-box{
+  position: relative;
+  margin: 0 auto;
+    width: 300px;
+    height: 300px;
+}
+.balls {
+    /* border-radius: 50%; */
+    position: absolute;
+    width: 40px;
+    height: 22px;
+    top: 56%;
+    animation-name: jump;
+    animation-duration: 1.5s;
+    animation-iteration-count: linear;
+    display: none;
+  }
+
+.cart{
+  position: absolute;
+  left: 42%;
+  bottom: 20%;
+  width: 70px;
+  animation-name: move;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.311, 0.441, 0.444, 1.649);
+  display: none;
+/*   animation-iteration-count: linear; */
+  
 }
 
-.shadow_button{
+  #green { 
+    /* background: green; */
+    left: 50%;
+/*     animation-timing-function: cubic-bezier(0.311, 0.441, 0.444, 1.649); */
+  }
+
+  @keyframes jump {
+    50% {
+      top: 10%;
+    }
+  }
+
+@keyframes move {
+    0% {
+      left: 20%;
+    }
+     100% {
+      left: 42%;
+    }
+  }
+
+  .shadow_button{
     box-shadow: 4px 4px 8px rgba(14, 39, 80, 0.25),
     -4px -4px 8px #fff;
     border: none;
@@ -20,69 +67,16 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 60%;
+    left: 30%;
+    cursor: pointer;
  }
 
- .shadow_button:hover{
-     cursor: pointer;
-    /* box-shadow: -3px -3px 7px #a0a0a032,
-    3px 3px 5px rgba(94,104,121,0.417); */
+ .d__none{
+   display: none;
  }
 
- .bike{
-     width: 30px;
-     margin-left: 10px;
+ .d__block{
+   display: block !important;
  }
-
- .bike__move {
-    margin-right:-300px;
-    transition: 2s;
-    transition-timing-function: cubic-bezier(0,.1,.8,0);
-    /* animation: mymove 5s infinite; */
-  }
-
-  .d__none{
-      transition: 5s;
-      display: none;
-  }
-
-  /**********/
-    .shadow_button_failed{
-        margin-top: 100px;
-        box-shadow: 4px 4px 8px rgba(14, 39, 80, 0.25),
-        -4px -4px 8px #fff;
-        border: none;
-        border-radius: 8px;
-        width: 150px;
-        height: 50px;
-        margin: 60px 20px;
-        font-size: 16px;
-        font-weight: 600;
-        color: hsl(0deg 0% 28%);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-     }
-    
-     .shadow_button_failed:hover{
-         cursor: pointer;
-        /* box-shadow: -3px -3px 7px #a0a0a032,
-        3px 3px 5px rgba(94,104,121,0.417); */
-     }
-    
-     .bike_failed{
-         width: 30px;
-         margin-left: 10px;
-     }
-    
-     .bike__move__failed {
-        margin-right:-300px;
-        transition: 2s;
-        transform: rotate(341deg);
-        transition-timing-function: cubic-bezier(0,.1,.8,0);
-        /* animation: mymove 5s infinite; */
-      }
-    
-      .d__none{
-          transition: 5s;
-          display: none;
-      }
